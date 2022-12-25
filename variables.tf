@@ -1,7 +1,7 @@
 #Project ID
 variable "project_id" {
   description = "project id"
-  default= "xertica-delivery-infra-service"
+  default= "xertica-delivery-infra-service" 
 }
 
 #Region
@@ -29,6 +29,6 @@ variable "ip_cidr_range" {
 
 #CIDR range for GKE
 variable "ip_cidr_range_gke" {
-  default = "10.10.0.0/18"
+  default = "10.0.0.0/20"
 }
 
