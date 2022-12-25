@@ -22,7 +22,7 @@ resource "google_container_cluster" "primary" {
 
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "node-pool-papita"
+  name       = "node-pool-g1-small"
   location   = var.zone
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
@@ -52,7 +52,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
 # Create a second node_pool
 resource "google_container_node_pool" "secondary_nodes" {
-  name       = "node-pool-papa"
+  name       = "node-pool-e2-small"
   location   = var.zone
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
@@ -82,7 +82,7 @@ resource "google_container_node_pool" "secondary_nodes" {
 
 # Create a third node_pool
 resource "google_container_node_pool" "tertiary_nodes" {
-  name       = "node-pool-papota"
+  name       = "node-pool-e2-medium"
   location   = var.zone
   cluster    = google_container_cluster.primary.name
   autoscaling {
